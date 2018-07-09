@@ -29,7 +29,7 @@ namespace DatingApp.API.Controllers
         }
 
 
-        [HttpGet("fuck/{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
             var value = await _context.Values.FirstOrDefaultAsync(x => x.Id == id);
@@ -37,7 +37,7 @@ namespace DatingApp.API.Controllers
             return Ok(value);
         }
 
-        // // GET api/values
+        // GET api/values
         // [HttpGet]
         // public IEnumerable<string> Get()
         // {
@@ -45,29 +45,29 @@ namespace DatingApp.API.Controllers
         //     //throw new Exception("Test");
         // }
 
-        // // GET api/values/5
-        // [HttpGet("{id}")]
-        // public string Get(int id)
-        // {
-        //     return "value";
-        // }
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
 
-        // // POST api/values
-        // [HttpPost]
-        // public void Post([FromBody]string value)
-        // {
-        // }
+        // POST api/values
+        [HttpPost]
+        public void Post([FromBody]string value)
+        {
+        }
 
-        // // PUT api/values/5
-        // [HttpPut("{id}")]
-        // public void Put(int id, [FromBody]string value)
-        // {
-        // }
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]string value)
+        {
+        }
 
-        // // DELETE api/values/5
-        // [HttpDelete("{id}")]
-        // public void Delete(int id)
-        // {
-        // }
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
     }
 }
